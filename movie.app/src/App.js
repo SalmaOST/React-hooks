@@ -1,32 +1,27 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import SearchBox from './Filter';
-import Button from './button';
-import MovieCard from './MovieCard'
+import Home from './Home';
+import {
+  BrowserRouter as Router ,
+  Routes,
+  Route
+} from "react-router-dom"
+import Desc from './Desc';
 
 
 
 
-class App extends React.Component {
-  render() {
-    return (
-    <div className="App">
-      <h1 className='Movies'> Voici tous les films disponible</h1>
-      <div className='Search'>
-     
-      </div>
-      <p className='add'>Vous avez un film a nous proposer , mettez le ci-dessous.</p>
-      <Button/>
-      <br/>
-      <br/>
-     <SearchBox/>
-      <br/>
-     <MovieCard/>
-      </div>
-    
-    );
-  }
-  }
+const App=()=>{
+return (
+  <Router>
+    <Routes>
+    <Route path='/' element={<Home/>} />
+    <Route path='/Description' element={<Desc/>} />
+    </Routes>
+  </Router>
+)
+}
+
 
 export default App;

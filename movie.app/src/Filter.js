@@ -10,7 +10,7 @@ function SearchBox(props) {
         <div className="search">
             <input className="Type" type="text" placeholder="Rechercher ici" onChange={event => { setSearch(event.target.value); } }></input>
             {Film.filter((film) => {
-                if (search == "") {
+                if (search === "") {
                     return null;
                 } else if (film.title.toLowerCase().includes(search.toLowerCase())) {
                     return film;
@@ -18,7 +18,7 @@ function SearchBox(props) {
             }).map((film, key) => {
                 return <div className="user" key={key}>
                                <h3>{film.title}</h3>,
-                               <img className="Pic" src={film.PosterUrl}/>
+                               <img className="Pic" src={film.PosterUrl} alt='PIC'/>
                         </div>
                            
                        

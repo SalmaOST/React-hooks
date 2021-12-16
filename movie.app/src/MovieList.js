@@ -2,6 +2,8 @@ import {Film} from "./Data";
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import ReactStars from "react-rating-stars-component";
+import { Link } from "react-router-dom";
+
 
 const MovieList = props =>{
      return (
@@ -12,7 +14,9 @@ const MovieList = props =>{
                 { 
                 Film.map((film, index) => (
                     <div className="col-md-3">
-                        <img className="Pic" src={film.PosterUrl} alt="Salma" height="300px" width="200px" />
+                        <Link to='/Description'>
+                             <img className="Pic" src={film.PosterUrl} alt="Salma" height="300px" width="200px" />
+                        </Link>
                         <h3 className="Title">{film.title}</h3>
                         <p> {film.description}</p>
                         <ReactStars
